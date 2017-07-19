@@ -148,7 +148,8 @@ while (true) {
 	
 	$entry['exp'] = [['base exp' => (string) $poke['base_experience']]];
 	
-	if ($i < 10000) {
+	if ($i < 650) {
+		// Generation 1-5 sprites are hotlinked from pokemondb
 		$imageName = $imageRenames[$poke['name']] ?: $poke['name'];
 		$entry['images'] = [
 			'normal' => [
@@ -160,7 +161,21 @@ while (true) {
 				'back' => 'https://img.pokemondb.net/sprites/black-white/anim/back-shiny/' . $imageName . '.gif',
 			],
 		];
+	} elseif ($i < 10000) {
+		// Generation 6 sprites are hosted with the game
+		$imageName = sprintf('%03d', $speciesId) . ".png";
+		$entry['images'] = [
+			'normal' => [
+				'front' => 'sprites/' . $imageName,
+				'back' => 'sprites/back/' . $imageName,
+			],
+			'shiny' => [
+				'front' => 'sprites/s' . $imageName,
+				'back' => 'sprites/back/s' . $imageName,
+			],
+		];
 	} else {
+		// Mega evolution sprites are hosted with the game
 		$xy = substr($poke['name'], -2);
 		if ($xy === '-x') {
 			$xy = 'x';
