@@ -25,7 +25,6 @@ $pokeRenames = [
 	'nidoran-f' => 'Nidoran f',
 	'nidoran-m' => 'Nidoran m',
 	'mr-mime' => 'Mr. Mime',
-	'ho-oh' => 'Ho-Oh',
 	'deoxys-normal' => 'Deoxys',
 	'wormadam-plant' => 'Wormadam',
 	'mime-jr' => 'Mime Jr.',
