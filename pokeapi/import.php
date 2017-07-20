@@ -46,6 +46,8 @@ $pokeRenames = [
 ];
 
 function pokeRename($id, $name) {
+	global $pokeRenames;
+	
 	if (isset($pokeRenames[$name])) {
 		return $pokeRenames[$name];
 	}
